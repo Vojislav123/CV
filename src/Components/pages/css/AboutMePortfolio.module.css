@@ -1,0 +1,58 @@
+.myWork {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    animation: fadeIn 2s linear;
+  }
+  
+
+  .h2{
+    text-align: center;
+
+  }
+
+  .myWork img {
+    max-width: 70%;
+    margin: auto;
+    border-radius: 50px;
+  }
+  
+
+  .project{
+    color: black;
+    display: flex;
+    flex-direction: row;
+    background-color: #aaaaaa;
+    border: 1px solid black;
+    border-radius: 50px;
+    margin: 50px;
+  }
+
+  .projectContent{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: 20px;
+  }
+  .projectTitle{
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+
+.buttonHolder{
+    width: 80%;
+    margin: auto;
+}
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

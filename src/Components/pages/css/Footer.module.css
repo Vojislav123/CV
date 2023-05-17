@@ -1,0 +1,10 @@
+.footerContainer{
+    color: #555555;
+    position: sticky;
+    margin-top: 60px;
+    cursor:default;
+}
+
+/* .footerContainer p:hover{
+    color: white;
+} */
