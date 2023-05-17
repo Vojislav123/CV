@@ -39,7 +39,7 @@ const Portfolio = () => {
             </p>
             <p>Technologies used: React, CSS</p>
             <div className={styles.buttonHolder}>
-              <Button />
+              <Button href={'https://github.com/Vojislav123/Projects/tree/main/'}/>
             </div>
           </div>
           <img
@@ -55,7 +55,7 @@ const Portfolio = () => {
             <p> Tv Shows search engine made using an open source api </p>
             <p>Technologies used: HTML, SCSS, Bootstrap, JavaScript</p>
             <div className={styles.buttonHolder}>
-              <Button />
+              <Button href={'https://github.com/Vojislav123/Projects/tree/main/bit-show'} />
             </div>
           </div>
           <img
@@ -71,7 +71,7 @@ const Portfolio = () => {
             <p>Movie database where a user can add or remove movies </p>
             <p>Technologies used: HTML, CSS, JavaScript</p>
             <div className={styles.buttonHolder}>
-              <Button />
+              <Button href={'https://github.com/Vojislav123/Projects/tree/main/Movie%20thingy'}/>
             </div>
           </div>
           <img
@@ -87,7 +87,7 @@ const Portfolio = () => {
             <p>Application made using open source API </p>
             <p>Technologies used: HTML, CSS, JavaScript</p>
             <div className={styles.buttonHolder}>
-              <Button />
+              <Button href={'https://github.com/Vojislav123/Projects/tree/main/chuckNorris'}/>
             </div>
           </div>
           <img

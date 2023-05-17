@@ -1,11 +1,11 @@
 import styles from './css/Button.module.css';
 import gitHubIcon from "../../images/github.svg";
 
-const Button = () => {
+const Button = ({href}) => {
   return (
     <button className={styles.button}>
       <a
-        href="https://github.com/Vojislav123/CV-Page/tree/main/cv-page"
+        href={href}
         target="_blank"
         rel="noreferrer"
       >
