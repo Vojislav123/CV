@@ -15,7 +15,7 @@
   white-space: nowrap;
   margin: 0 auto;
   font-size: 5em;
-  font-weight: 500;
+  font-weight: bold;
   animation:
     typing 3.5s steps(40, end),
     blink-caret .75s step-end infinite;
@@ -57,7 +57,7 @@
   background-color: #FED409;
   border: none;
   border-radius: 43px;
-  box-shadow: 0px 9px white;
+  box-shadow: 0px 5px white;
 }
 
 .button:hover {
@@ -79,7 +79,7 @@
   justify-content: space-around;
   align-items: center;
   border: none;
-  border-radius: 30px;
+  border-radius: 50px;
   margin: auto;
 
 }

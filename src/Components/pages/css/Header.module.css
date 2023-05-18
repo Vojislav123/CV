@@ -51,6 +51,8 @@
     height: fit-content;
     padding: 1px;
     border-radius: 5px;
+    position: absolute;
+    right: 430px;
 }
 
 .link:last-child {
