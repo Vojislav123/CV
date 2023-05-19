@@ -40,7 +40,7 @@
 
 .buttonHolder {
   margin: 8% 0px;
-  margin-top: 40px;
+  margin-top: 80px;
 }
 
 .button {
@@ -56,6 +56,7 @@
   border: none;
   border-radius: 43px;
   box-shadow: 0px 5px #E5AD06;
+
 }
 
 .button:hover {
@@ -80,37 +81,32 @@
   border: none;
   border-radius: 50px;
   margin: auto;
-
+  margin-bottom: 50px;
 }
 
 .contentContainer a {
   text-decoration: none;
   cursor: pointer;
-  margin: 10px 30px;
+  margin: 30px;
+  font-size: 1.5em;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.contentContainer p {
   color: #aaaaaa;
-  margin: auto 10px;
 }
 
-.contentContainer a p img {
+
+.contentContainer a img {
   fill: #aaaaaa;
   width: 20px;
   height: 20px;
+  margin: 10px;
 }
 
-.contentContainer p:hover {
+.contentContainer :hover {
   color: white;
 }
 
-.contentContainer a p img:hover {
-  color: white;
-  fill: white;
-}
 
 
 .spinnyWrapper {

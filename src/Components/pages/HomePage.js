@@ -37,23 +37,19 @@ const HomePage = () => {
 
       <div className={styles.contentContainer}>
         <a href={cv} download>
-          <p>
             Download my CV{" "}
             <img
               className={styles.svg}
               src={downloadIcon}
               alt="download icon"
             />
-          </p>
         </a>
         <a
           href="https://github.com/Vojislav123/CV-Page/tree/main/cv-page"
           target="_blank"
           rel="noreferrer"
         >
-          <p>
             GitHub <img src={gitHubIcon} alt="download icon" />
-          </p>
         </a>
       </div>
     </div>
