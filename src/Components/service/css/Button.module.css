@@ -11,14 +11,21 @@
     background-color: #FED409;
     border: none;
     border-radius: 43px;
-    box-shadow: 0px 5px white;
+    box-shadow: 0px 5px #E5AD06;
     margin: auto;
 }
 
 
 .button:hover {
     background-color: white;
-}
+    box-shadow: 0 5px #999;
+  }
+  
+  .button:active {
+    background-color: white;
+    box-shadow: 0 5px #999;
+    transform: translateY(4px);
+  }
 
 .button a{
     display: flex;
@@ -31,10 +38,4 @@
 .button img {
     width: 30px;
     margin: 10px;
-}
-
-.button:active {
-    background-color: white;
-    box-shadow: 0 5px #777;
-    transform: translateY(4px);
 }

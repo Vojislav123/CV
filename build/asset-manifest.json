@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.caf7ec51.css",
-    "main.js": "/static/js/main.bb270220.js",
+    "main.css": "/static/css/main.19fd03fe.css",
+    "main.js": "/static/js/main.1f98ede3.js",
     "static/js/787.cc2c841f.chunk.js": "/static/js/787.cc2c841f.chunk.js",
     "static/media/tvShows.png": "/static/media/tvShows.3f1d99026a346ab8c516.png",
     "static/media/PahuljicaLogo.png": "/static/media/PahuljicaLogo.7e5e9d072438a307c51e.png",
@@ -15,12 +15,12 @@
     "index.html": "/index.html",
     "static/media/download.svg": "/static/media/download.c13e3b0f6a89a4efe10620617a23285d.svg",
     "static/media/scrollUp.svg": "/static/media/scrollUp.6966cae61df6ab3fb7fa47411b5ef3e1.svg",
-    "main.caf7ec51.css.map": "/static/css/main.caf7ec51.css.map",
-    "main.bb270220.js.map": "/static/js/main.bb270220.js.map",
+    "main.19fd03fe.css.map": "/static/css/main.19fd03fe.css.map",
+    "main.1f98ede3.js.map": "/static/js/main.1f98ede3.js.map",
     "787.cc2c841f.chunk.js.map": "/static/js/787.cc2c841f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.caf7ec51.css",
-    "static/js/main.bb270220.js"
+    "static/css/main.19fd03fe.css",
+    "static/js/main.1f98ede3.js"
   ]
 }

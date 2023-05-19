@@ -30,10 +30,8 @@ const HomePage = () => {
         </p>
       </div>
       <div className={styles.buttonHolder}>
-        <Link className={styles.link} to="/me&mywork">
-          <button className={styles.button}>
-            <span>Read more about me</span>
-          </button>
+        <Link className={styles.button} to="/me&mywork">
+              Read more about me
         </Link>
       </div>
 

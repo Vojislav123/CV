@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import { Link } from "react-router-dom";
 import logo from "../../images/logo.png";
 import logoOnHover from "../../images/logoOnHover.png";
@@ -36,18 +35,24 @@ const Header = () => {
         />
       </div>
       <nav className={styles.linkContainer}>
-        <Link className={styles.link} to="/">
-          <p>Home</p>
-        </Link>
-
-        <Link className={styles.link} to="/me&MyWork">
-          <p>Me & My Work</p>
-        </Link>
-
-        <Link className={styles.link} to="/contact">
-          <p>Contact</p>
-          <span>Hire me</span>
-        </Link>
+        <ul className={styles.linkList}>
+          <li className={styles.linkItem}>
+            <Link className={styles.link} to="/">
+              Home
+            </Link>
+          </li>
+          <li className={styles.linkItem}>
+            <Link className={styles.link} to="/me&MyWork">
+              Me &amp; My Work
+            </Link>
+          </li>
+          <li className={styles.linkItem}>
+              <span>Hire me</span>
+            <Link className={styles.link} to="/contact">
+              Contact
+            </Link>
+          </li>
+        </ul>
       </nav>
     </div>
   );
