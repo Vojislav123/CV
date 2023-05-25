@@ -66,20 +66,20 @@
 
 .button:active {
   background-color: white;
-  box-shadow: 0 5px #999;
+  box-shadow: 0 3px #999;
   transform: translateY(4px);
 }
 
 
 .contentContainer {
   background-color: #222222;
-  padding: 2% 8%;
+  padding: 1% 8%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   border: none;
-  border-radius: 50px;
+  border-radius: 60px;
   margin: auto;
   margin-bottom: 50px;
 }
@@ -214,3 +214,156 @@
 }
 
 
+@media (max-width: 1024px) {
+  .homepageContainer {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .homepageContainer p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+  }
+
+  .buttonHolder{
+    width: 500px;
+  }
+  .button{
+    padding: 4% 8%;
+    font-size: 1.2em;
+  }
+
+  .spinnyWrapper {
+    margin-top: 40px;
+    width: 500px;
+  }
+
+}
+
+@media (max-width: 992px) {
+  .typingContainer h1 {
+    font-size: 3em;
+  }
+
+  .homepageContainer h2 {
+    font-size: 3em;
+  }
+
+  .homepageContainer p {
+    font-size: 1.2em;
+  }
+
+  .buttonHolder {
+    margin-top: 30px;
+  }
+
+  .contentContainer a {
+    margin: 20px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .spinnyWrapper {
+    margin-top: 40px;
+    margin-left: -110px;
+    width: 500px;
+  }
+  .button{
+    font-size: 0.8em;
+    margin-bottom: 40px;
+  }
+  .buttonHolder {
+    margin-bottom: 80px;
+  }
+
+  .contentContainer a{
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 425px) {
+  .homepageContainer {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .homepageContainer p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+  }
+
+  .buttonHolder {
+    width: 300px;
+  }
+
+  .button {
+    padding: 6% 10%;
+    font-size: 1.2em;
+  }
+
+  .spinnyWrapper {
+    margin-top: 40px;
+    width: 500px;
+  }
+}
+
+@media (max-width: 375px) {
+  .typingContainer h1 {
+    font-size: 2.5em;
+  }
+
+  .homepageContainer h2 {
+    font-size: 2.5em;
+  }
+
+  .homepageContainer p {
+    font-size: 1em;
+  }
+
+  .buttonHolder {
+    margin-top: 30px;
+  }
+
+  .contentContainer a {
+    margin: 15px;
+  }
+}
+
+@media (max-width: 325px) {
+  .homepageContainer {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .homepageContainer p {
+    font-size: 1em;
+    margin-bottom: 20px;
+  }
+
+  .buttonHolder {
+    width: 250px;
+    margin-top: 20px;
+  }
+
+  .button {
+    padding: 4% 8%;
+    font-size: 1em;
+  }
+
+  .spinnyWrapper {
+    margin-top: 30px;
+    width: 250px;
+  }
+
+  .spinnyWords {
+    min-width: 280px;
+  }
+
+  .contentContainer a {
+    font-size: 0.6em;
+  }
+}

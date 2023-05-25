@@ -2,9 +2,33 @@ body {
   background-color: black;
   color: white;
   font-family: 'Poppins', sans-serif;
-  width: 1170px;
-  max-width: 100%; 
+  max-width: 1170px;
+  width: 100%;
   padding: 0 15px;
   text-align: center;
   margin: auto;
+}
+
+@media (max-width: 768px) {
+  body {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 425px) {
+  body {
+    max-width: 85%;
+  }
+}
+
+@media (max-width: 375px) {
+  body {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 325px) {
+  body {
+    max-width: 75%;
+  }
 }

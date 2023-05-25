@@ -20,7 +20,7 @@ const ScrollToTop = () => {
 
   const handleScroll = () => {
     const scrollY = window.scrollY;
-    const headerHeight = 80; // Replace with your actual header height
+    const headerHeight = 80;
 
     if (scrollY > headerHeight) {
       setShowButton(true);

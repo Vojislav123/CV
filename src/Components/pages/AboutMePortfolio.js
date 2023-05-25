@@ -32,7 +32,7 @@ const Portfolio = () => {
       <div className={styles.myWork}>
         <div className={styles.project}>
           <div className={styles.projectContent}>
-            <p className={styles.projectTitle}>Final project in BIT bootcamp</p>
+            <h2 className={styles.projectTitle}>Final project in BIT bootcamp</h2>
             <p>
               Bit Final is a Interview reports application built using a REST
               api provided by the school
@@ -44,6 +44,7 @@ const Portfolio = () => {
           </div>
           <img
             src={projectImage}
+            className={styles.projectImg}
             alt="Project 1"
             onClick={() => handleOpenModal(projectImage)}
           />
@@ -60,6 +61,7 @@ const Portfolio = () => {
           </div>
           <img
             src={projectImage2}
+            className={styles.projectImg}
             alt="Project 2"
             onClick={() => handleOpenModal(projectImage2)}
           />
@@ -76,6 +78,7 @@ const Portfolio = () => {
           </div>
           <img
             src={projectImage3}
+            className={styles.projectImg}
             alt="Project 3"
             onClick={() => handleOpenModal(projectImage3)}
           />
@@ -92,6 +95,7 @@ const Portfolio = () => {
           </div>
           <img
             src={projectImage4}
+            className={styles.projectImg}
             alt="Project 4"
             onClick={() => handleOpenModal(projectImage4)}
           />

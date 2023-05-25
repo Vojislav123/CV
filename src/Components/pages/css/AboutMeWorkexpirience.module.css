@@ -1,25 +1,110 @@
-.workExpContainer{
+.workExpContainer {
     display: flex;
     flex-direction: column;
     margin: auto;
-}
-
-.title{
+  }
+  
+  .title {
     font-size: 2em;
     font-weight: 500;
     text-align: center;
-}
-
-.companyContainer{
+  }
+  
+  .companyContainer {
     display: flex;
     color: black;
     background-color: #aaaaaa;
     border-radius: 50px;
     margin: 50px;
     padding: 8%;
-}
-
-.companyContainer img{
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .companyContent {
+    text-align: left;
+  }
+  
+  .companyContent h2 {
+    text-align: center;
+    font-size: 2em;
+  }
+  
+  .companyContainer img {
     width: 200px;
     margin: 0px 20%;
-}
+  }
+  
+  @media (max-width: 1024px) {
+    .title {
+      font-size: 1.8em;
+    }
+  
+    .companyContainer {
+      margin: 30px;
+      padding: 5%;
+    }
+  
+    .companyContainer img {
+      width: 150px;
+      margin: 0px 10%;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .title {
+      font-size: 1.5em;
+    }
+  
+    .companyContainer {
+      margin: 20px;
+      padding: 4%;
+    }
+  
+    .companyContainer img {
+      margin: 0px 5%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .title {
+      font-size: 1.3em;
+    }
+  
+  
+    .companyContainer img {
+      margin: 0px 5%;
+    }
+  }
+  
+  @media (max-width: 425px) {
+    .title {
+      font-size: 1em;
+    }
+  
+    .companyContainer {
+      font-size: 0.8em;
+    }
+  
+    .companyContainer img {
+      width: 40%;
+      height: max-content;
+    }
+  }
+  
+  @media (max-width: 375px) {
+    .title {
+      font-size: 1em;
+    }
+  
+    .companyContainer {
+        margin-left: 10px;
+        font-size: 0.6em;
+    }
+  
+    .companyContainer img {
+      width: 50%;
+      margin: 0px 2%;
+    }
+  }
+  

@@ -1,105 +1,139 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
+import useInput from "../hooks/use-input";
 import emailjs from "@emailjs/browser";
 
 import styles from "./css/ContactMe.module.css";
 
-const ContactMe = () => {
+let textBeforeForm = (
+  <p>
+    I am interested in learning and full time job opportunities - especially on
+    ambitious or large projects. However, if you have any other requests or
+    questions, don't hesitate to contact me using form below either.
+  </p>
+);
+
+const SimpleInput = () => {
   const form = useRef();
   const [showPopup, setShowPopup] = useState(false);
-  const [errorFields, setErrorFields] = useState([]);
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-    const requiredFields = ["user_name", "user_email", "message"];
-    const missingFields = [];
+  const {
+    value: enteredName,
+    isValid: enteredNameIsValid,
+    hasError: nameInputHasError,
+    valueChangeHandler: nameChangedHandler,
+    inputBlurHandler: nameBlurHandler,
+    reset: resetNameInput,
+  } = useInput((value) => value.trim() !== "");
 
-    requiredFields.forEach((field) => {
-      if (!form.current[field].value) {
-        missingFields.push(field);
-      }
-    });
+  const {
+    value: enteredEmail,
+    isValid: enteredEmailIsValid,
+    hasError: emailInputHasError,
+    valueChangeHandler: emailChangeHandler,
+    inputBlurHandler: emailBlurHandler,
+    reset: resetEmailInput,
+  } = useInput((value) => value.includes("@"));
 
-    setErrorFields(missingFields);
+  const {
+    value: enteredText,
+    isValid: enteredTextIsValid,
+    hasError: textInputHasError,
+    valueChangeHandler: textChangedHandler,
+    inputBlurHandler: textBlurHandler,
+    reset: resetTextInput,
+  } = useInput((value) => value.trim() !== "");
 
-    if (missingFields.length > 0) {
+  let formIsValid = false;
+
+  if (enteredNameIsValid && enteredEmailIsValid && enteredTextIsValid) {
+    formIsValid = true;
+  }
+
+  const formSubmissionHandler = (event) => {
+    event.preventDefault();
+
+    if (!formIsValid) {
       return;
     }
 
     emailjs
-      .sendForm(
-        "service_h5vzlm8",
-        "template_euhddy9",
-        form.current,
-        ""
-      )
+      .sendForm("service_h5vzlm8", "template_euhddy9", form.current, "")
       .then(
         (result) => {
           console.log(result.text);
           setShowPopup(true);
-          setErrorFields([]);
         },
         (error) => {
           console.log(error.text);
         }
       );
+
+    resetNameInput();
+    resetEmailInput();
+    resetTextInput();
   };
 
-  const handleInputChange = (e) => {
-    const fieldName = e.target.name;
-    if (errorFields.includes(fieldName)) {
-      setErrorFields(errorFields.filter((field) => field !== fieldName));
-    }
-  };
+  const nameInputClasses = nameInputHasError
+    ? `${styles.formControl} ${styles.invalid}`
+    : `${styles.formControl}`;
+
+  const emailInputClasses = emailInputHasError
+    ? `${styles.formControl} ${styles.invalid}`
+    : `${styles.formControl}`;
+
+  const textInputClasses = textInputHasError
+    ? `${styles.formControl} ${styles.invalid}`
+    : `${styles.formControl}`;
 
   return (
-    <div className={styles.formContainer}>
-      <p>
-        I am interested in learning and full time job opportunities - especially on ambitious or
-        large projects. However, if you have any other requests or questions,
-        don't hesitate to contact me using below form either.
-      </p>
-      <form ref={form} onSubmit={sendEmail}>
-        <label>Name</label>
+    <form onSubmit={formSubmissionHandler}>
+      <h1>Contact Me</h1>
+      <div className={styles.textBeforeForm}>{textBeforeForm}</div>
+      <div className={nameInputClasses}>
+        <label htmlFor="name">Your Name</label>
         <input
           type="text"
-          name="user_name"
-          className={
-            errorFields.includes("user_name")
-              ? styles.errorInput
-              : styles.inputOK
-          }
-          onChange={handleInputChange}
+          id="name"
+          onChange={nameChangedHandler}
+          onBlur={nameBlurHandler}
+          value={enteredName}
         />
-        <label>Email</label>
+        {nameInputHasError && (
+          <p className="error-text">Name must not be empty.</p>
+        )}
+      </div>
+      <div className={emailInputClasses}>
+        <label htmlFor="email">Your E-Mail</label>
         <input
           type="email"
-          name="user_email"
-          className={
-            errorFields.includes("user_email")
-              ? styles.errorInput
-              : styles.inputOK
-          }
-          onChange={handleInputChange}
+          id="email"
+          onChange={emailChangeHandler}
+          onBlur={emailBlurHandler}
+          value={enteredEmail}
         />
-        <label>Message</label>
-        <div
-          className={
-            errorFields.includes("message") ? styles.errorInput : styles.inputOK
-          }
-        >
-          <textarea
-            name="message"
-            className={
-              errorFields.includes("message")
-                ? styles.errorInput
-                : styles.inputOK
-            }
-            onChange={handleInputChange}
-          />
-        </div>
-        <input type="submit" className={styles.sendButton} value="Send" />
-      </form>
+        {emailInputHasError && (
+          <p className="error-text">Please enter a valid email.</p>
+        )}
+      </div>
+      <div className={textInputClasses}>
+        <label htmlFor="text">Your message</label>
+        <textarea
+          type="text"
+          id="text"
+          onChange={textChangedHandler}
+          onBlur={textBlurHandler}
+          value={enteredText}
+        />
+        {textInputHasError && (
+          <p className="error-text">Please enter a valid message.</p>
+        )}
+      </div>
 
+      <div className={styles.formActions}>
+        <button className={styles.formButton} disabled={!formIsValid}>
+          Submit
+        </button>
+      </div>
       {showPopup && (
         <div
           className={`${styles.popupContainer} ${
@@ -108,9 +142,9 @@ const ContactMe = () => {
         >
           <div className={styles.popupContent}>
             <h3>Message Sent!</h3>
-            <p>Your message has been successfully sent.</p>
+            <p>Your message was sent.</p>
             <button
-              className={styles.sendButton}
+              className={styles.formButton}
               onClick={() => setShowPopup(false)}
             >
               Close
@@ -118,8 +152,8 @@ const ContactMe = () => {
           </div>
         </div>
       )}
-    </div>
+    </form>
   );
 };
 
-export default ContactMe;
+export default SimpleInput;

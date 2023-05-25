@@ -1,9 +1,156 @@
-
-.aboutmeContainer{
-    margin: 50px;
-}
-
-.aboutmeContainer img{
+.h1 {
+    font-size: 4em;
+    font-weight: 600;
+  }
+  
+  .aboutmeContainer {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .aboutmeContainer img {
     border-radius: 50px;
-    margin: 40px;
-}
+    height: max-content;
+    width: 30%;
+    padding: 20px;
+    margin: auto;
+  }
+  
+  .aboutMeText {
+    width: 60%;
+    font-size: 1.2em;
+  }
+  
+  .portfolio {
+    margin-top: 60px;
+    margin: auto;
+  }
+  
+  @media (max-width: 1024px) {
+    .h1 {
+      font-size: 3.5em;
+    }
+  
+    .aboutmeContainer {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .aboutmeContainer img {
+      width: 50%;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+  
+    .aboutMeText {
+      width: 80%;
+    }
+  
+    .portfolio {
+      margin-top: 40px;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .h1 {
+      font-size: 3em;
+    }
+  
+    .aboutmeContainer img {
+      width: 60%;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+  
+    .aboutMeText {
+      width: 90%;
+    }
+  
+    .portfolio {
+      margin-top: 30px;
+    }
+  }
+  
+
+  @media (max-width: 768px) {
+  
+    .aboutmeContainer img {
+      max-width: 60%;
+      padding: 3px;
+      margin-bottom: 10px;
+    }
+  
+    .aboutMeText {
+      width: 90%;
+      font-size: 1em;
+    }
+  
+    .portfolio {
+      margin-top: 20px;
+    }
+  }
+  
+  @media (max-width: 425px) {
+    .h1 {
+      font-size: 2em;
+    }
+  
+    .aboutmeContainer img {
+      width: 80%;
+      padding: 3px;
+      margin-bottom: 10px;
+    }
+  
+    .aboutMeText {
+      width: 90%;
+      font-size: 0.9em;
+    }
+  
+    .portfolio {
+      margin-top: 15px;
+    }
+  }
+  
+  @media (max-width: 375px) {
+    .h1 {
+      font-size: 1.8em;
+    }
+  
+    .aboutmeContainer img {
+      width: 80%;
+      padding: 2px;
+      margin-bottom: 10px;
+    }
+  
+    .aboutMeText {
+      width: 90%;
+      font-size: 0.9em;
+    }
+  
+    .portfolio {
+      margin-top: 15px;
+    }
+  }
+  
+  /* CSS for screens with max width 325px */
+  @media (max-width: 325px) {
+    .h1 {
+      font-size: 1.6em;
+    }
+  
+    .aboutmeContainer img {
+      width: 80%;
+      padding: 2px;
+      margin-bottom: 10px;
+    }
+  
+    .aboutMeText {
+      width: 90%;
+      font-size: 0.8em;
+    }
+  
+    .portfolio {
+      margin-top: 10px;
+    }
+  }
+  
