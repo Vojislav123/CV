@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import projectImage from "../../images/BitFinal.png";
+import projectImage from "../../images/bitFinal.png";
 import projectImage2 from "../../images/tvShows.png";
 import projectImage3 from "../../images/Movie.png";
 import projectImage4 from "../../images/Chucky.png";
@@ -32,6 +32,9 @@ const Portfolio = () => {
       <div className={styles.myWork}>
         <div className={styles.project}>
           <div className={styles.projectContent}>
+            <p className={styles.aboveText}>
+              Project: Data Entry
+            </p>
             <h2 className={styles.projectTitle}>Final project in BIT bootcamp</h2>
             <p>
               Bit Final is a Interview reports application built using a REST
@@ -52,7 +55,10 @@ const Portfolio = () => {
 
         <div className={styles.project}>
           <div className={styles.projectContent}>
-            <p className={styles.projectTitle}>TV Shows</p>
+          <p className={styles.aboveText}>
+              Project: Search Engine
+            </p>
+            <h2 className={styles.projectTitle}>TV Shows</h2>
             <p> Tv Shows search engine made using an open source api </p>
             <p>Technologies used: HTML, SCSS, Bootstrap, JavaScript</p>
             <div className={styles.buttonHolder}>
@@ -69,7 +75,10 @@ const Portfolio = () => {
 
         <div className={styles.project}>
           <div className={styles.projectContent}>
-            <p className={styles.projectTitle}>Personal Movie database </p>
+          <p className={styles.aboveText}>
+              Project: Movie Notepad
+            </p>
+            <h2 className={styles.projectTitle}>Personal Movie database </h2>
             <p>Movie database where a user can add or remove movies </p>
             <p>Technologies used: HTML, CSS, JavaScript</p>
             <div className={styles.buttonHolder}>
@@ -86,7 +95,10 @@ const Portfolio = () => {
 
         <div className={styles.project}>
           <div className={styles.projectContent}>
-            <p className={styles.projectTitle}>Chucky jokes</p>
+          <p className={styles.aboveText}>
+            Project: Joke Generator
+            </p>
+            <h2 className={styles.projectTitle}>Chucky jokes</h2>
             <p>Application made using open source API </p>
             <p>Technologies used: HTML, CSS, JavaScript</p>
             <div className={styles.buttonHolder}>

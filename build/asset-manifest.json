@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/static/css/main.20069376.css",
-    "main.js": "/static/js/main.506efb35.js",
+    "main.css": "/static/css/main.7de362f6.css",
+    "main.js": "/static/js/main.d8a02fac.js",
     "static/js/787.cc2c841f.chunk.js": "/static/js/787.cc2c841f.chunk.js",
-    "static/media/tvShows.png": "/static/media/tvShows.3f1d99026a346ab8c516.png",
     "static/media/PahuljicaLogo.png": "/static/media/PahuljicaLogo.7e5e9d072438a307c51e.png",
+    "static/media/tvShows.png": "/static/media/tvShows.75d3f13f31d899e5d9cf.png",
     "static/media/me.png": "/static/media/me.a9d33e4ad2f501b00bd7.png",
-    "static/media/Chucky.png": "/static/media/Chucky.8287e31e3e00160d6fbb.png",
-    "static/media/Movie.png": "/static/media/Movie.cfd39f643da1cf4d19c7.png",
+    "static/media/Chucky.png": "/static/media/Chucky.0e9e2a60d3c2c9b8c937.png",
     "static/media/VojislavAlic-CV.pdf": "/static/media/VojislavAlic-CV.f5b7ae3f4655161d469a.pdf",
-    "static/media/BitFinal.png": "/static/media/BitFinal.564c0ae45eef9da09143.png",
+    "static/media/bitFinal.png": "/static/media/bitFinal.6afb92f04fc7f4dc73d7.png",
+    "static/media/Movie.png": "/static/media/Movie.152d3e8fcaf3bda4f080.png",
     "static/media/EtihadLogo.png": "/static/media/EtihadLogo.cb5821cab0405b30636f.png",
     "static/media/github.svg": "/static/media/github.4813829c6d975e40ff4b488be0511032.svg",
     "index.html": "/index.html",
     "static/media/download.svg": "/static/media/download.c13e3b0f6a89a4efe10620617a23285d.svg",
     "static/media/scrollUp.svg": "/static/media/scrollUp.6966cae61df6ab3fb7fa47411b5ef3e1.svg",
-    "main.20069376.css.map": "/static/css/main.20069376.css.map",
-    "main.506efb35.js.map": "/static/js/main.506efb35.js.map",
+    "main.7de362f6.css.map": "/static/css/main.7de362f6.css.map",
+    "main.d8a02fac.js.map": "/static/js/main.d8a02fac.js.map",
     "787.cc2c841f.chunk.js.map": "/static/js/787.cc2c841f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.20069376.css",
-    "static/js/main.506efb35.js"
+    "static/css/main.7de362f6.css",
+    "static/js/main.d8a02fac.js"
   ]
 }
