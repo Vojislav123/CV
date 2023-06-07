@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.7de362f6.css",
+    "main.css": "/static/css/main.a3583e82.css",
     "main.js": "/static/js/main.d8a02fac.js",
     "static/js/787.cc2c841f.chunk.js": "/static/js/787.cc2c841f.chunk.js",
     "static/media/PahuljicaLogo.png": "/static/media/PahuljicaLogo.7e5e9d072438a307c51e.png",
@@ -15,12 +15,12 @@
     "index.html": "/index.html",
     "static/media/download.svg": "/static/media/download.c13e3b0f6a89a4efe10620617a23285d.svg",
     "static/media/scrollUp.svg": "/static/media/scrollUp.6966cae61df6ab3fb7fa47411b5ef3e1.svg",
-    "main.7de362f6.css.map": "/static/css/main.7de362f6.css.map",
+    "main.a3583e82.css.map": "/static/css/main.a3583e82.css.map",
     "main.d8a02fac.js.map": "/static/js/main.d8a02fac.js.map",
     "787.cc2c841f.chunk.js.map": "/static/js/787.cc2c841f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7de362f6.css",
+    "static/css/main.a3583e82.css",
     "static/js/main.d8a02fac.js"
   ]
 }
