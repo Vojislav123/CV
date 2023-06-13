@@ -12,61 +12,7 @@
   font-weight: bold;
   
 }
-.projectContent {
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-  padding: 100px 30px;
-  margin: auto;
-  font-size: 1.2em;
-  text-align: left;
-}
 
-.projectContent h2 {
-  text-align: left;
-  font-size: 1.5em;
-  font-weight: bold;
-}
-
-.aboveText{
-  color: #77A93D;
-  box-shadow: 0px 2px #c9dabc;
-}
-
-.project {
-  color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  background-color: #E4EBF3;
-  border: 1px solid black;
-  border-radius: 50px;
-  margin: 50px;
-  padding: 20px;
-  
-}
-
-.project .projectImg {
-  width: 55%;
-  cursor: pointer;
-  margin: auto;
-  border-radius: 15px;
-  box-shadow: 4px 4px 10px #9d9d9d4d;
-
-}
-
-
-.projectTitle {
-  font-weight: bolder;
-  font-size: 1.5em;
-  
-}
-
-.buttonHolder {
-  width: 80%;
-  margin: auto;
-}
 
 @keyframes fadeIn {
   0% {

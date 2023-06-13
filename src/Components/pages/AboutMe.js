@@ -1,7 +1,10 @@
+import { useState, useEffect } from "react";
+
 import styles from "./css/Aboutme.module.css";
 import mephoto from "../../images/me.png";
 import Portfolio from "./AboutMePortfolio";
 import WorkExpirience from "./AboutMeWorkExpirience";
+import ContentLoader from "react-content-loader";
 
 let text = (
   <>
@@ -46,11 +49,27 @@ let text = (
 );
 
 const AboutMe = () => {
+
+  const [loading, setLoading]= useState(true);
+
+  useEffect(()=>{
+      const timeout=setTimeout(()=>{
+           setLoading(false);
+      },3000);
+
+      return ()=> {
+          clearTimeout(timeout);
+      }
+  })
+
+
   return (
     <>
       <h1 className={styles.h1}>Welcome to my portfolio website!</h1>
       <div className={styles.aboutmeContainer}>
-        <img src={mephoto} alt="" />
+      {loading ? <ContentLoader speed={2} width={400} height={350}>
+        <rect x="10" y="55" rx="5" ry="5" width="800" height="350" />
+            </ContentLoader> : <img src={mephoto} alt="" /> }
         <div className={styles.aboutMeText}>{text}</div>
       </div>
 
