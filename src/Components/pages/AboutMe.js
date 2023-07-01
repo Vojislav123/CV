@@ -64,7 +64,7 @@ const AboutMe = () => {
 
 
   return (
-    <>
+    <div className={styles.aboutMe}>
       <h1 className={styles.h1}>Welcome to my portfolio website!</h1>
       <div className={styles.aboutmeContainer}>
       {loading ? <ContentLoader speed={2} width={400} height={350}>
@@ -80,7 +80,7 @@ const AboutMe = () => {
       <div className={styles.expirience}>
         <WorkExpirience />
       </div>
-    </>
+    </div>
   );
 };
 

@@ -25,7 +25,14 @@
     margin-top: 60px;
     margin: auto;
   }
-  
+  .expirience{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+
+  }
+
   @media (max-width: 1024px) {
     .h1 {
       font-size: 3.5em;
