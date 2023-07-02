@@ -4,20 +4,32 @@ import projectImage2 from "../../images/tvShows.png";
 import projectImage3 from "../../images/Movie.png";
 import projectImage4 from "../../images/Chucky.png";
 import projectImage5 from "../../images/pokeApp.png";
+import nasaImage from '../../images/nasaProject.png'
 import ProjectModal from "../service/ProjectModal";
-import styles from "./css/AboutMePortfolio.module.css";
 
 
 const Portfolio = () => {
 
 
   return (
-    <div className={styles.myWorkContainer}>
-      <div className={styles.h2}>
-        <h2>Want to see my work in action?</h2>
-        <h2>Take a look at my portfolio</h2>
+<div className="my-8">
+      <div className="text-center">
+        <h2 className="text-3xl font-bold mb-4">Want to see my work in action?</h2>
+        <h2 className="text-3xl font-bold">Take a look at my portfolio</h2>
       </div>
-      <div className={styles.myWork}>
+      <div className="flex flex-col items-center space-y-8">
+        <ProjectModal
+          projectName={"Nasa Apis Project"}
+          projectTitle={"Nasa Apis"}
+          text={
+            "Webpage created using using Nasa Api's. User can search through Nasa's galery and much more"
+          }
+          techUsed={"Next.JS, Typescript, Tailwind CSS"}
+          gitLink={"https://github.com/Vojislav123/nasa-apis"}
+          online={'https://nasa-apis-zeta.vercel.app/'}
+          buttonText={'View Online'}
+          img={nasaImage}
+        />
         <ProjectModal
           projectName={"Pokemon database"}
           projectTitle={"Pokemon Application"}
@@ -26,6 +38,8 @@ const Portfolio = () => {
           }
           techUsed={"React, Tailwind CSS"}
           gitLink={"https://github.com/Vojislav123/pokemonAPI-project"}
+          online={'https://pokemon-vojislavalic.netlify.app/'}
+          buttonText={'View Online'}
           img={projectImage5}
         />
 

@@ -1,46 +1,41 @@
 import { useState, useEffect } from "react";
 import ContentLoader from "react-content-loader";
-
-
 import Button from "./Button";
-import styles from './css/ProjectModal.module.css'
 
-const ProjectModal =({projectName, projectTitle, text, techUsed, gitLink, img}) =>{
-    const [loading, setLoading]= useState(true);
+const ProjectModal = ({ projectName, projectTitle, text, techUsed, gitLink, online, buttonText, img }) => {
+  const [loading, setLoading] = useState(true);
 
-    useEffect(()=>{
-        const timeout=setTimeout(()=>{
-             setLoading(false);
-        },3000);
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
 
-        return ()=> {
-            clearTimeout(timeout);
-        }
-    })
+    return () => {
+      clearTimeout(timeout);
+    };
+  });
 
-
-    return (
-      <div className={styles.project}>
-        <div className={styles.projectContent}>
-          <p className={styles.aboveText}>Project: {projectName}</p>
-          <h2 className={styles.projectTitle}>{projectTitle}</h2>
-          <p>{text}</p>
-          <p>Technologies used: {techUsed}</p>
-          <div className={styles.buttonHolder}>
-            <Button href={gitLink} />
-          </div>
+  return (
+    <div className="flex flex-col md:flex-row items-center bg-gray-200 border border-black rounded-2xl p-4 space-y-4 md:space-y-0 md:space-x-4 w-full h-3/4 mx-auto my-4">
+      <div className="flex flex-col w-full md:w-72">
+        <p className="text-green-600 font-bold mb-2">Project: {projectName}</p>
+        <h2 className="text-2xl text-black font-bold mb-2">{projectTitle}</h2>
+        <section className="text-black">{text}</section>
+        <p className="mt-4 text-black">Technologies used: {techUsed}</p>
+        <div className="mt-4">
+          <Button href={gitLink} />
+          {online&& <Button href={online} text={buttonText} />}
         </div>
-        {loading ? <ContentLoader speed={2} width={700} height={350}>
-        <rect x="0" y="15" rx="5" ry="5" width="800" height="350" />
-            </ContentLoader> :  <img
-            src={img}
-            className={styles.projectImg}
-            alt="Project"
-          />}
       </div>
-    );
-
-
-}
+      {loading ? (
+        <ContentLoader speed={2} width={900} height={350}>
+          <rect x="50" y="15" rx="50" ry="50" width="800" height="350" />
+        </ContentLoader>
+      ) : (
+        <img src={img} className="w-full md:w-3/4 rounded-xl shadow-md" alt="Project" />
+      )}
+    </div>
+  );
+};
 
 export default ProjectModal;

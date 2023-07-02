@@ -6,7 +6,7 @@ import Portfolio from "./AboutMePortfolio";
 import WorkExpirience from "./AboutMeWorkExpirience";
 import ContentLoader from "react-content-loader";
 
-let text = (
+const fullText = (
   <>
     <p>
       I'm Vojislav, an ambitious web developer dedicated to continuous
@@ -49,35 +49,54 @@ let text = (
 );
 
 const AboutMe = () => {
+  const [loading, setLoading] = useState(true);
+  const [expanded, setExpanded] = useState(false);
 
-  const [loading, setLoading]= useState(true);
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
 
-  useEffect(()=>{
-      const timeout=setTimeout(()=>{
-           setLoading(false);
-      },3000);
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, []);
 
-      return ()=> {
-          clearTimeout(timeout);
-      }
-  })
+  const toggleExpanded = () => {
+    setExpanded(!expanded);
+  };
 
+  const truncatedText = fullText.props.children[0];
 
   return (
-    <div className={styles.aboutMe}>
-      <h1 className={styles.h1}>Welcome to my portfolio website!</h1>
-      <div className={styles.aboutmeContainer}>
-      {loading ? <ContentLoader speed={2} width={400} height={350}>
-        <rect x="10" y="55" rx="5" ry="5" width="800" height="350" />
-            </ContentLoader> : <img src={mephoto} alt="" /> }
-        <div className={styles.aboutMeText}>{text}</div>
+    <div>
+      <h1 className="text-4xl font-bold mb-8">Welcome to my portfolio website!</h1>
+      <div className={`${styles.aboutMeContainer} flex flex-col items-center space-y-8`}>
+        {loading ? (
+          <ContentLoader speed={2} width={400} height={350}>
+            <rect x="10" y="55" rx="5" ry="5" width="800" height="350" />
+          </ContentLoader>
+        ) : (
+          <img src={mephoto} alt="" className="w-64 h-auto rounded-xl" />
+        )}
+        <div className="ml-8 max-w-xl">
+          {expanded ? fullText : truncatedText}
+          {truncatedText && (
+            <button
+              className="text-blue-500 underline"
+              onClick={toggleExpanded}
+            >
+              {expanded ? "Read less" : "Read more"}
+            </button>
+          )}
+        </div>
       </div>
 
-      <div className={styles.portfolio}>
+      <div className="flex justify-center mx-auto">
         <Portfolio />
       </div>
 
-      <div className={styles.expirience}>
+      <div className="flex justify-center mx-auto">
         <WorkExpirience />
       </div>
     </div>
