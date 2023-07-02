@@ -10,7 +10,7 @@ const ScrollToTop = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    handleScroll(); // Check initial scroll position
+    handleScroll();
 
     window.addEventListener('scroll', handleScroll);
     return () => {

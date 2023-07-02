@@ -1,5 +1,5 @@
 
-import projectImage from "../../images/bitFinal.png";
+import projectImage from "../../images/BitFinal.png";
 import projectImage2 from "../../images/tvShows.png";
 import projectImage3 from "../../images/Movie.png";
 import projectImage4 from "../../images/Chucky.png";

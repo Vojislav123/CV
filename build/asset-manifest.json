@@ -1,11 +1,12 @@
 {
   "files": {
-    "main.css": "/static/css/main.e455b5b8.css",
-    "main.js": "/static/js/main.abfb1477.js",
+    "main.css": "/static/css/main.b4a7ef4a.css",
+    "main.js": "/static/js/main.166f5beb.js",
     "static/js/787.cc2c841f.chunk.js": "/static/js/787.cc2c841f.chunk.js",
     "static/media/PahuljicaLogo.png": "/static/media/PahuljicaLogo.7e5e9d072438a307c51e.png",
     "static/media/tvShows.png": "/static/media/tvShows.75d3f13f31d899e5d9cf.png",
     "static/media/me.png": "/static/media/me.a9d33e4ad2f501b00bd7.png",
+    "static/media/nasaProject.png": "/static/media/nasaProject.d80dbc8abd5006818949.png",
     "static/media/pokeApp.png": "/static/media/pokeApp.56358680a4895dae5b9f.png",
     "static/media/Chucky.png": "/static/media/Chucky.0e9e2a60d3c2c9b8c937.png",
     "static/media/VojislavAlic-CV.pdf": "/static/media/VojislavAlic-CV.f5b7ae3f4655161d469a.pdf",
@@ -16,12 +17,12 @@
     "index.html": "/index.html",
     "static/media/download.svg": "/static/media/download.c13e3b0f6a89a4efe10620617a23285d.svg",
     "static/media/scrollUp.svg": "/static/media/scrollUp.6966cae61df6ab3fb7fa47411b5ef3e1.svg",
-    "main.e455b5b8.css.map": "/static/css/main.e455b5b8.css.map",
-    "main.abfb1477.js.map": "/static/js/main.abfb1477.js.map",
+    "main.b4a7ef4a.css.map": "/static/css/main.b4a7ef4a.css.map",
+    "main.166f5beb.js.map": "/static/js/main.166f5beb.js.map",
     "787.cc2c841f.chunk.js.map": "/static/js/787.cc2c841f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e455b5b8.css",
-    "static/js/main.abfb1477.js"
+    "static/css/main.b4a7ef4a.css",
+    "static/js/main.166f5beb.js"
   ]
 }
