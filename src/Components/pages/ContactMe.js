@@ -16,6 +16,9 @@ const SimpleInput = () => {
   const form = useRef();
   const [showPopup, setShowPopup] = useState(false);
 
+  const serviceEmail = process.env.REACT_APP_EMAIL_SERVICE;
+  const templateEmail = process.env.REACT_APP_EMAIL_TEMPLATE;
+
   const {
     value: enteredName,
     isValid: enteredNameIsValid,
@@ -57,7 +60,7 @@ const SimpleInput = () => {
     }
 
     emailjs
-      .sendForm("service_h5vzlm8", "template_euhddy9", form.current, "")
+      .sendForm({serviceEmail}, {templateEmail}, form.current, "")
       .then(
         (result) => {
           console.log(result.text);
