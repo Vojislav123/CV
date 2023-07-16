@@ -5,7 +5,9 @@ import projectImage3 from "../../images/Movie.png";
 import projectImage4 from "../../images/Chucky.png";
 import projectImage5 from "../../images/pokeApp.png";
 import nasaImage from '../../images/nasaProject.png'
+import zastavaCars from '../../images/zastavaAutomobili.png';
 import ProjectModal from "../service/ProjectModal";
+
 
 
 const Portfolio = () => {
@@ -18,6 +20,21 @@ const Portfolio = () => {
         <h2 className="text-3xl font-bold">Take a look at my portfolio</h2>
       </div>
       <div className="flex flex-col items-center space-y-8">
+
+
+
+        <ProjectModal
+          projectName={"Zastava Cars Project"}
+          projectTitle={"Zastava Cars"}
+          text={
+            "Inspired by the people at Zastava forum"
+          }
+          techUsed={"Next.JS, Typescript, Tailwind CSS"}
+          gitLink={"https://github.com/Vojislav123/zastava-showcase"}
+          online={'https://zastava-showcase.vercel.app/'}
+          buttonText={'View Online'}
+          img={zastavaCars}
+        />
         <ProjectModal
           projectName={"Nasa Apis Project"}
           projectTitle={"Nasa Apis"}
