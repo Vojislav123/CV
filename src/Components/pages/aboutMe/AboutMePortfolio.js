@@ -7,6 +7,7 @@ import projectImage4 from '../../../images/Chucky.png';
 import projectImage5 from '../../../images/pokeApp.png';
 import nasaImage from '../../../images/nasaProject.png';
 import zastavaCars from '../../../images/zastavaAutomobili.png';
+import cdtHub from '../../../images/cdtHub.png'
 
 const Portfolio = () => {
 	return (
@@ -18,6 +19,17 @@ const Portfolio = () => {
 				<h2 className='text-3xl font-bold mb-8'>Take a look at my portfolio</h2>
 			</div>
 			<div className='flex flex-col items-center space-y-8'>
+      <ProjectModal
+					projectName={'CDT Hub'}
+					projectTitle={'CDT Hub'}
+					text={
+						"Webpage created during internship with Trust Digital"
+					}
+					techUsed={'Next.JS, Typescript, Tailwind CSS'}
+					img={cdtHub}
+          bgColor={'blue2'}
+				/>
+
 				<ProjectModal
 					projectName={'Nasa Apis Project'}
 					projectTitle={'Nasa Apis'}
@@ -29,6 +41,7 @@ const Portfolio = () => {
 					online={'https://nasa-apis-zeta.vercel.app/'}
 					buttonText={'View Online'}
 					img={nasaImage}
+          bgColor={'pink'}
 				/>
 				<ProjectModal
 					projectName={'Zastava Cars Project'}
@@ -39,6 +52,7 @@ const Portfolio = () => {
 					online={'https://zastava-showcase.vercel.app/'}
 					buttonText={'View Online'}
 					img={zastavaCars}
+          bgColor={'blue'}
 				/>
 				<ProjectModal
 					projectName={'Pokemon database'}
@@ -48,9 +62,9 @@ const Portfolio = () => {
 					}
 					techUsed={'React, Tailwind CSS'}
 					gitLink={'https://github.com/Vojislav123/pokemonAPI-project'}
-					online={'https://pokemon-vojislavalic.netlify.app/'}
 					buttonText={'View Online'}
 					img={projectImage5}
+          bgColor={'grey'}
 				/>
 
 				<ProjectModal
@@ -62,6 +76,7 @@ const Portfolio = () => {
 					techUsed={'React, CSS'}
 					gitLink={'https://github.com/Vojislav123/Projects/tree/main/bitFinal'}
 					img={projectImage}
+          bgColor={'blue2'}
 				/>
 
 				<ProjectModal
@@ -82,6 +97,7 @@ const Portfolio = () => {
 						'https://github.com/Vojislav123/Projects/tree/main/Movie%20thingy'
 					}
 					img={projectImage3}
+          bgColor={'pink'}
 				/>
 
 				<ProjectModal
@@ -93,6 +109,7 @@ const Portfolio = () => {
 						'https://github.com/Vojislav123/Projects/tree/main/chuckNorris'
 					}
 					img={projectImage4}
+          bgColor={'blue'}
 				/>
 			</div>
 		</div>

@@ -24,7 +24,7 @@ const AboutMe = () => {
 
 	return (
 		<div className='flex-col justify-center'>
-			<h1 className='flex justify-center leading-normal text-8xl font-bold mb-8'>
+			<h1 className='flex justify-center leading-normal text-4xl lg:text-8xl font-bold mb-8'>
 				Welcome to my portfolio website!
 			</h1>
 			<div className={`flex flex-col lg:flex-row mx-auto lg:justify-between max-w-4xl space-y-8`}>
