@@ -38,7 +38,7 @@ const ProjectModal = ({
 
 	return (
 		<div
-			className={`flex flex-col text-left md:flex-row items-center ${bgColorHandler} border border-black rounded-2xl py-[50px] pr-[50px] space-y-4 md:space-y-0 md:space-x-4 w-full h-3/4 mx-auto my-4`}>
+			className={`flex flex-col text-center md:text-left md:flex-row items-center ${bgColorHandler} border border-black rounded-2xl p-[50px] md:py-[50px] md:pr-[50px] md:pl-[0px] space-y-4 md:space-y-0 md:space-x-4 w-full h-3/4 mx-auto my-4`}>
 			<div className='flex flex-col w-full md:w-72 pl-4'>
 				<p className='text-[#FED409] font-bold mb-2'>Project: {projectName}</p>
 				<h2 className='text-2xl text-black font-bold mb-2'>{projectTitle}</h2>
@@ -62,7 +62,7 @@ const ProjectModal = ({
 			) : (
 				<img
 					src={img}
-					className='w-full md:w-3/4 pl-[10px]'
+					className='w-full md:w-3/4 mx-auto'
 					alt='Project'
 				/>
 			)}

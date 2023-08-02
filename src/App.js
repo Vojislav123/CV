@@ -7,7 +7,7 @@ import Footer from './Components/pages/Footer';
 
 
 import './App.css';
-import ContactMe from "./Components/pages/ContactMe";
+import ContactMe from "./Components/pages/contactMe/ContactMe";
 import ScrollToTop from "./Components/service/ScrollToTop";
 
 function App() {
