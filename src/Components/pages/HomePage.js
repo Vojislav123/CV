@@ -7,6 +7,7 @@ import gitHubIcon from "../../images/github.svg";
 import styles from "./css/HomePage.module.css";
 
 const HomePage = () => {
+
   return (
     <div className={styles.homepageContainer}>
       <div className={styles.typingContainer}>
@@ -45,7 +46,7 @@ const HomePage = () => {
             />
         </a>
         <a
-          href="https://github.com/Vojislav123/CV-Page/tree/main/cv-page"
+          href="https://github.com/Vojislav123"
           target="_blank"
           rel="noreferrer"
         >

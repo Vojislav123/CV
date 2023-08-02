@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 
 import HomePage from "./Components/pages/HomePage";
 import Header from "./Components/pages/Header";
-import AboutMe from "./Components/pages/AboutMe";
+import AboutMe from "./Components/pages/aboutMe/AboutMe";
 import Footer from './Components/pages/Footer';
 
 

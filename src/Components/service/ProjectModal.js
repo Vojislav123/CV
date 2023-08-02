@@ -16,7 +16,7 @@ const ProjectModal = ({ projectName, projectTitle, text, techUsed, gitLink, onli
   });
 
   return (
-    <div className="flex flex-col md:flex-row items-center bg-gray-200 border border-black rounded-2xl p-4 space-y-4 md:space-y-0 md:space-x-4 w-full h-3/4 mx-auto my-4">
+    <div className="flex flex-col text-left md:flex-row items-center bg-gray-200 border border-black rounded-2xl p-4 space-y-4 md:space-y-0 md:space-x-4 w-full h-3/4 mx-auto my-4">
       <div className="flex flex-col w-full md:w-72">
         <p className="text-green-600 font-bold mb-2">Project: {projectName}</p>
         <h2 className="text-2xl text-black font-bold mb-2">{projectTitle}</h2>
