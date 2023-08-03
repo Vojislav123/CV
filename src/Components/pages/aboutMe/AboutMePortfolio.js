@@ -44,7 +44,7 @@ const Portfolio = () => {
           bgColor={'pink'}
 				/>
 				<ProjectModal
-					projectName={'Zastava Cars Project'}
+					projectName={'Zastava Cars'}
 					projectTitle={'Zastava Cars'}
 					text={'Inspired by the people at Zastava forum'}
 					techUsed={'Next.JS, Typescript, Tailwind CSS'}

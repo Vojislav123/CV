@@ -26,6 +26,7 @@ const ProjectModal = ({
 			? 'bg-[#EAEBEC]'
 			: 'bg-white';
 
+
 	useEffect(() => {
 		const timeout = setTimeout(() => {
 			setLoading(false);
@@ -40,7 +41,7 @@ const ProjectModal = ({
 		<div
 			className={`flex flex-col text-center md:text-left md:flex-row items-center ${bgColorHandler} border border-black rounded-2xl p-[50px] md:py-[50px] md:pr-[50px] md:pl-[0px] space-y-4 md:space-y-0 md:space-x-4 w-full h-3/4 mx-auto my-4`}>
 			<div className='flex flex-col w-full md:w-72 pl-4'>
-				<p className='text-[#FED409] font-bold mb-2'>Project: {projectName}</p>
+				<p className='text-black leading-loose mb-2'>Project: {projectName}</p>
 				<h2 className='text-2xl text-black font-bold mb-2'>{projectTitle}</h2>
 
 				<section className='text-black'>{text}</section>

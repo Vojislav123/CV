@@ -70,7 +70,7 @@ const ContactForm = () => {
       .then(
         (result) => {
           console.log(result.text);
-          resetForm(); // Reset the form and display success message
+          resetForm(); 
         },
         (error) => {
           console.log(error.text);
@@ -81,7 +81,7 @@ const ContactForm = () => {
   return (
     <form className="max-w-md mx-auto p-6 bg-transparent shadow-md rounded-lg" onSubmit={formSubmissionHandler} ref={form}>
       <div className="mb-6">
-        <label htmlFor="name" className="block text-white text-sm font-bold mb-2">
+        <label htmlFor="name" className="block text-white text-sm text-left font-bold mb-2">
           Name:
         </label>
         <input
@@ -91,14 +91,14 @@ const ContactForm = () => {
           value={formData.name}
           onChange={handleChange}
           required
-          className={`w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#FED409] ${
+          className={`w-full p-2 border rounded-md text-black focus:outline-none focus:ring-2 focus:ring-[#FED409] ${
             errors.name ? 'border-red-500' : 'border-gray-300'
           }`}
         />
         {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
       </div>
       <div className="mb-6">
-        <label htmlFor="email" className="block text-white text-sm font-bold mb-2">
+        <label htmlFor="email" className="block text-white text-left text-sm font-bold mb-2">
           Email:
         </label>
         <input
@@ -108,14 +108,14 @@ const ContactForm = () => {
           value={formData.email}
           onChange={handleChange}
           required
-          className={`w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#FED409] ${
+          className={`w-full p-2 border rounded-md text-black focus:outline-none focus:ring-2 focus:ring-[#FED409] ${
             errors.email ? 'border-red-500' : 'border-gray-300'
           }`}
         />
         {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
       </div>
       <div className="mb-6">
-        <label htmlFor="message" className="block text-white text-sm font-bold mb-2">
+        <label htmlFor="message" className="block text-white text-left text-sm font-bold mb-2">
           Message:
         </label>
         <textarea
@@ -124,7 +124,7 @@ const ContactForm = () => {
           value={formData.message}
           onChange={handleChange}
           required
-          className={`w-full min-h-[50px] p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#FED409] ${
+          className={`w-full min-h-[70px] p-2 border text-black rounded-md focus:outline-none focus:ring-2 focus:ring-[#FED409] ${
             errors.message ? 'border-red-500' : 'border-gray-300'
           }`}
         />

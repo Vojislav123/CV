@@ -10,7 +10,7 @@ let textBeforeForm = (
 
 const ContactMe = () => {
   return (
-    <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto p-6">
+    <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto p-6 min-h-[550px] lg:min-h-[600px] 2xl:min-h-[650px]">
       <div className='mt-8'>
         <h1 className="text-center md:text-left leading-normal text-4xl lg:text-6xl font-bold mb-8">
           Contact Me
