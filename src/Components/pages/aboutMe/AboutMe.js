@@ -32,7 +32,7 @@ const AboutMe = () => {
         Welcome to my portfolio website!
       </h1>
       <div className={`flex flex-col lg:flex-row mx-auto lg:justify-between max-w-4xl space-y-8`}>
-        {loading && <img src={imgLoading} alt='' className='w-64 mx-auto h-auto rounded-xl' />}
+        {loading && <img src={imgLoading} alt='' className='w-64 mx-auto h-[300px] rounded-xl' />}
         <Suspense fallback={<img src={imgLoading} alt='' className='w-64 mx-auto h-auto rounded-xl' />}>
           {!loading && mainImageLoaded && <LazyImage src={mephoto} alt='' className='w-64 mx-auto h-auto rounded-xl' />}
         </Suspense>
