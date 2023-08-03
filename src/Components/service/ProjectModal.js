@@ -1,6 +1,8 @@
-import { useState, useEffect } from 'react';
-import ContentLoader from 'react-content-loader';
+import React, { useState, useEffect, Suspense } from 'react';
 import Button from './Button';
+import imgLoading from '../../images/imgLoading.jpg';
+
+const LazyImage = React.lazy(() => import('./LoadingImage'));
 
 const ProjectModal = ({
 	projectName,
@@ -14,6 +16,7 @@ const ProjectModal = ({
 	bgColor,
 }) => {
 	const [loading, setLoading] = useState(true);
+	const [mainImageLoaded, setMainImageLoaded] = useState(false);
 
 	const bgColorHandler =
 		bgColor === 'blue'
@@ -26,16 +29,19 @@ const ProjectModal = ({
 			? 'bg-[#EAEBEC]'
 			: 'bg-white';
 
-
 	useEffect(() => {
-		const timeout = setTimeout(() => {
+		const image = new Image();
+		image.src = img;
+
+		image.onload = () => {
 			setLoading(false);
-		}, 3000);
+			setMainImageLoaded(true);
+		};
 
 		return () => {
-			clearTimeout(timeout);
+			image.onload = null;
 		};
-	});
+	}, [img]);
 
 	return (
 		<div
@@ -43,9 +49,7 @@ const ProjectModal = ({
 			<div className='flex flex-col w-full md:w-72 pl-4'>
 				<p className='text-black leading-loose mb-2'>Project: {projectName}</p>
 				<h2 className='text-2xl text-black font-bold mb-2'>{projectTitle}</h2>
-
 				<section className='text-black'>{text}</section>
-
 				<p className='mt-4 text-black'>Technologies used: {techUsed}</p>
 				{gitLink && (
 					<div className='mt-4'>
@@ -56,17 +60,21 @@ const ProjectModal = ({
 					</div>
 				)}
 			</div>
-			{loading ? (
-				<ContentLoader speed={2} width={900} height={350}>
-					<rect x='50' y='15' rx='50' ry='50' width='800' height='350' />
-				</ContentLoader>
-			) : (
+			{loading && (
 				<img
-					src={img}
-					className='w-full md:w-3/4 mx-auto'
-					alt='Project'
+					src={imgLoading}
+					alt=''
+					className='w-full md:w-3/4 h-[420px] mx-auto'
 				/>
 			)}
+			<Suspense
+				fallback={
+					<img src={imgLoading} alt='' className='w-full md:w-3/4 mx-auto' />
+				}>
+				{!loading && mainImageLoaded && (
+					<LazyImage src={img} alt='' className='w-full md:w-3/4 mx-auto' />
+				)}
+			</Suspense>
 		</div>
 	);
 };
