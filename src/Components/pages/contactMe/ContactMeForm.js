@@ -1,21 +1,21 @@
 import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import { toast } from 'react-hot-toast';
 
 const ContactForm = () => {
   const form = useRef(null);
-
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',
   });
-
   const [errors, setErrors] = useState({});
-
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const toastInfo=[];
 
   const serviceEmail = process.env.REACT_APP_EMAIL_SERVICE;
   const templateEmail = process.env.REACT_APP_EMAIL_TEMPLATE;
+  const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -25,22 +25,27 @@ const ContactForm = () => {
     }));
   };
 
+
   const validateForm = () => {
     let validationErrors = {};
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!formData.name.trim()) {
       validationErrors.name = 'Name is required';
+      toastInfo.push('Name is required')
     }
 
     if (!formData.email.trim()) {
-      validationErrors.email = 'Email is required';
+      validationErrors.email = ' Email is required';
+      toastInfo.push('Email is required')
     } else if (!emailRegex.test(formData.email)) {
       validationErrors.email = 'Invalid email format';
+      toastInfo.push('Invalid email format')
     }
 
     if (!formData.message.trim()) {
-      validationErrors.message = 'Message is required';
+      validationErrors.message = ' Message is required';
+      toastInfo.push('Message is required')
     }
 
     setErrors(validationErrors);
@@ -62,24 +67,30 @@ const ContactForm = () => {
     const formIsValid = validateForm();
 
     if (!formIsValid) {
+      toastInfo.forEach((message) => {
+        toast.error(message);
+      });
       return;
     }
 
     emailjs
-      .sendForm({ serviceEmail }, { templateEmail }, form.current, '')
-      .then(
-        (result) => {
-          console.log(result.text);
-          resetForm(); 
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    .sendForm(serviceEmail, templateEmail, form.current, '', { user_id: publicKey })
+    .then(
+      (result) => {
+        console.log(result.text);
+        toast.success('Thank you for sending me an email, ill get back to you as soon as posible')
+        resetForm();
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
+  
   };
 
+
   return (
-    <form className="max-w-md mx-auto p-6 bg-transparent shadow-md rounded-lg" onSubmit={formSubmissionHandler} ref={form}>
+    <form className="max-w-md mx-auto p-6 bg-transparent shadow-md rounded-lg" onSubmit={formSubmissionHandler} ref={form} noValidate>
       <div className="mb-6">
         <label htmlFor="name" className="block text-white text-sm text-left font-bold mb-2">
           Name:
@@ -95,7 +106,7 @@ const ContactForm = () => {
             errors.name ? 'border-red-500' : 'border-gray-300'
           }`}
         />
-        {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
+        {errors.name && <p className="text-red-500 text-xs mt-1 text-left">{errors.name}</p>}
       </div>
       <div className="mb-6">
         <label htmlFor="email" className="block text-white text-left text-sm font-bold mb-2">
@@ -112,7 +123,7 @@ const ContactForm = () => {
             errors.email ? 'border-red-500' : 'border-gray-300'
           }`}
         />
-        {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
+        {errors.email && <p className="text-red-500 text-xs mt-1 text-left">{errors.email}</p>}
       </div>
       <div className="mb-6">
         <label htmlFor="message" className="block text-white text-left text-sm font-bold mb-2">
@@ -128,7 +139,7 @@ const ContactForm = () => {
             errors.message ? 'border-red-500' : 'border-gray-300'
           }`}
         />
-        {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message}</p>}
+        {errors.message && <p className="text-red-500 text-xs mt-1 text-left">{errors.message}</p>}
       </div>
       <button
         type="submit"
