@@ -13,7 +13,7 @@ const ContactForm = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const toastInfo=[];
 
-  const serviceEmail = process.env.REACT_APP_EMAIL_SERVICE;
+  const serviceEmail = process.env.REACT_APP_SERVICE_ID;
   const templateEmail = process.env.REACT_APP_EMAIL_TEMPLATE;
   const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
 
@@ -72,9 +72,8 @@ const ContactForm = () => {
       });
       return;
     }
-
-    emailjs
-    .sendForm(serviceEmail, templateEmail, form.current, '', { user_id: publicKey })
+    
+    emailjs.sendForm(serviceEmail, templateEmail , form.current, publicKey)
     .then(
       (result) => {
         console.log(result.text);
@@ -147,7 +146,7 @@ const ContactForm = () => {
       >
         Submit
       </button>
-      {formSubmitted && <div className="text-[#FED409] text-center mt-2">Submitted successfully! Thank you.</div>}
+      {formSubmitted && <div className="text-[#FED409] text-center mt-6">Submitted successfully! Thank you.</div>}
     </form>
   );
 };

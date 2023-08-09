@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { Toaster, toast } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 
 import HomePage from "./Components/pages/HomePage";
 import Header from "./Components/pages/Header";
@@ -11,10 +11,6 @@ import './App.css';
 import ContactMe from "./Components/pages/contactMe/ContactMe";
 import ScrollToTop from "./Components/service/ScrollToTop";
 
-
-toast('Hi there! Thank you for visiting my webpage!', {
-  icon: '👏',
-});
 
 function App() {
   return (
