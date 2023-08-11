@@ -2,7 +2,6 @@ import EtihadLogo from '../../../images/EtihadLogo.png';
 import PahuljicaLogo from '../../../images/PahuljicaLogo.png';
 
 
-
 const WorkExpirience = () => {
 	return (
 		<div className='py-8'>
@@ -10,8 +9,8 @@ const WorkExpirience = () => {
 				<h1 className='text-4xl font-bold'>Work Experience</h1>
 			</div>
 
-			<div className='flex items-center justify-center mx-auto max-w-[768px] text-black bg-white rounded-xl space-x-8 mb-8'>
-				<div className='flex flex-col py-[40px] '>
+			<div className='flex flex-col items-center py-8 justify-center mx-auto max-w-3xl text-black bg-white rounded-xl mb-8'>
+				<div className='flex flex-col mb-4'>
 					<h2 className='text-2xl font-bold mb-2'>Pahuljica MVN</h2>
 					<p>Local company in Belgrade selling frozen food products.</p>
 					<p>Founder, Manager, Salesperson.</p>
@@ -19,8 +18,8 @@ const WorkExpirience = () => {
 				<img src={PahuljicaLogo} alt='Pahuljica Logo' className='w-auto h-16' />
 			</div>
 
-			<div className='flex items-center justify-center mx-auto max-w-[768px] bg-white rounded-xl text-black space-x-8 mb-8'>
-				<div className='flex flex-col py-[40px]'>
+			<div className='flex flex-col items-center py-8 justify-center mx-auto max-w-3xl bg-white rounded-xl text-black mb-8'>
+				<div className='flex flex-col mb-4'>
 					<h2 className='text-2xl font-bold mb-2'>Etihad Airways</h2>
 					<p>National airline of the United Arab Emirates.</p>
 					<p>Call center operator, ticketing, training new recruits.</p>

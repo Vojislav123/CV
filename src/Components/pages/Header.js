@@ -22,6 +22,10 @@ const Header = () => {
     setIsTransitionActive(false);
   };
 
+
+
+
+
   return (
     <div className={styles.headerContainer}>
       <div className={styles.logo}>
