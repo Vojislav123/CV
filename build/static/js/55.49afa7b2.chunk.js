@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkcvdesign=self.webpackChunkcvdesign||[]).push([[55],{55:function(s,a,c){c.r(a);c(791);var e=c(184);a.default=function(s){var a=s.src,c=s.alt,n=s.className;return(0,e.jsx)("img",{src:a,alt:c,className:n})}}}]);
+//# sourceMappingURL=55.49afa7b2.chunk.js.map
