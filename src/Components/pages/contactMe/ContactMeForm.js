@@ -9,7 +9,7 @@ const ContactForm = () => {
   const dispatch= useDispatch();
   const errors= useSelector((state)=> state.formState.errors);
   const formSubmitted= useSelector((state)=> state.formState.formSubmitted);
-  const formData= useSelector((state)=> state.formState.formData)
+  const formData= useSelector((state)=> state.formState.formData);
 
   const toastInfo=[];
 
@@ -51,7 +51,7 @@ const ContactForm = () => {
 
   const resetForm = () => {
     dispatch(contactFormActions.clearFormData());
-    dispatch(contactFormActions.formSubmissionHandler());
+    dispatch(contactFormActions.formSubmittedHander());
   };
 
   const formSubmissionHandler = (event) => {
@@ -70,8 +70,8 @@ const ContactForm = () => {
     .then(
       (result) => {
         console.log(result.text);
-        toast.success('Thank you for sending me an email, ill get back to you as soon as posible')
         resetForm();
+        toast.success('Thank you for sending me an email, ill get back to you as soon as posible')
       },
       (error) => {
         toast.error(error.text);
