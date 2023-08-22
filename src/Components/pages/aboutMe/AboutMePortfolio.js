@@ -1,10 +1,6 @@
 import ProjectModal from '../../service/ProjectModal';
 
-import projectImage from '../../../images/BitFinal.png';
-import projectImage2 from '../../../images/tvShows.png';
-import projectImage3 from '../../../images/Movie.png';
-import projectImage4 from '../../../images/Chucky.png';
-import projectImage5 from '../../../images/pokeApp.png';
+import pokemonImg from '../../../images/pokeApp.png';
 import nasaImage from '../../../images/nasaProject.png';
 import zastavaCars from '../../../images/zastavaAutomobili.png';
 import cdtHub from '../../../images/cdtHub.png';
@@ -21,7 +17,6 @@ const Portfolio = () => {
 			</div>
 			<div className='flex flex-col items-center space-y-8'>
 				<ProjectModal
-					projectName={'CDT Hub'}
 					projectTitle={'CDT Hub'}
 					text={'Webpage created during internship with Trust Digital'}
 					techUsed={'Next.JS, Typescript, Tailwind CSS'}
@@ -30,7 +25,6 @@ const Portfolio = () => {
 				/>
 
 				<ProjectModal
-					projectName={'Nasa Apis Project'}
 					projectTitle={'Nasa Apis'}
 					text={
 						"Webpage created using using Nasa Api's. User can search through Nasa's galery and much more"
@@ -43,7 +37,6 @@ const Portfolio = () => {
 					bgColor={'pink'}
 				/>
 				<ProjectModal
-					projectName={'Zastava Cars'}
 					projectTitle={'Zastava Cars'}
 					text={'Inspired by the people at Zastava forum'}
 					techUsed={'Next.JS, Typescript, Tailwind CSS'}
@@ -54,7 +47,6 @@ const Portfolio = () => {
 					bgColor={'blue'}
 				/>
 				<ProjectModal
-					projectName={'Pokemon database'}
 					projectTitle={'Pokemon Application'}
 					text={
 						'Pokemon application is used for searching pokemons, checking their specification and it is posible to select favorite Pokemon. The data persists event after closing.'
@@ -62,53 +54,8 @@ const Portfolio = () => {
 					techUsed={'React, Tailwind CSS'}
 					gitLink={'https://github.com/Vojislav123/pokemonAPI-project'}
 					buttonText={'View Online'}
-					img={projectImage5}
+					img={pokemonImg}
 					bgColor={'grey'}
-				/>
-
-				<ProjectModal
-					projectName={'Data Entry'}
-					projectTitle={'Final project in BIT bootcamp'}
-					text={
-						' Bit Final is a Interview reports application built using a REST api provided by the school'
-					}
-					techUsed={'React, CSS'}
-					gitLink={'https://github.com/Vojislav123/Projects/tree/main/bitFinal'}
-					img={projectImage}
-					bgColor={'blue2'}
-				/>
-
-				<ProjectModal
-					projectName={'Search Engine'}
-					projectTitle={'TV Shows'}
-					text={'Tv Shows search engine made using an open source api'}
-					techUsed={'HTML, SCSS, Bootstrap, JavaScript'}
-					gitLink={'https://github.com/Vojislav123/Projects/tree/main/bit-show'}
-					img={projectImage2}
-				/>
-
-				<ProjectModal
-					projectName={'Movie Notepad'}
-					projectTitle={'Personal Movie database'}
-					text={'Movie database where the user can add or remove movies'}
-					techUsed={'HTML, CSS, JavaScript'}
-					gitLink={
-						'https://github.com/Vojislav123/Projects/tree/main/Movie%20thingy'
-					}
-					img={projectImage3}
-					bgColor={'pink'}
-				/>
-
-				<ProjectModal
-					projectName={'Joke Generator'}
-					projectTitle={'Chucky jokes'}
-					text={'Application made using open source API'}
-					techUsed={'HTML, CSS, JavaScript'}
-					gitLink={
-						'https://github.com/Vojislav123/Projects/tree/main/chuckNorris'
-					}
-					img={projectImage4}
-					bgColor={'blue'}
 				/>
 			</div>
 		</div>

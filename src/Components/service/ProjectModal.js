@@ -1,11 +1,12 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import Button from './Button';
 import imgLoading from '../../images/imgLoading.jpg';
+import { useDispatch, useSelector } from 'react-redux';
+import { aboutMeActions } from '../../store/aboutMe-slice';
 
 const LazyImage = React.lazy(() => import('./LoadingImage'));
 
 const ProjectModal = ({
-	projectName,
 	projectTitle,
 	text,
 	techUsed,
@@ -15,8 +16,9 @@ const ProjectModal = ({
 	img,
 	bgColor,
 }) => {
-	const [loading, setLoading] = useState(true);
-	const [mainImageLoaded, setMainImageLoaded] = useState(false);
+	const dispatch= useDispatch();
+	const loading= useSelector((state)=> state.aboutState.loading);
+	const mainImageLoaded=useSelector((state)=>state.aboutState.mainImageLoaded);
 
 	const bgColorHandler =
 		bgColor === 'blue'
@@ -34,8 +36,7 @@ const ProjectModal = ({
 		image.src = img;
 
 		image.onload = () => {
-			setLoading(false);
-			setMainImageLoaded(true);
+			dispatch(aboutMeActions.aboutMeHander());
 		};
 
 		return () => {
@@ -47,7 +48,6 @@ const ProjectModal = ({
 		<div
 			className={`flex flex-col text-center md:text-left md:flex-row items-center ${bgColorHandler} border border-black rounded-2xl p-[50px] md:py-[50px] md:pr-[50px] md:pl-[0px] space-y-4 md:space-y-0 md:space-x-4 w-full h-3/4 mx-auto my-4`}>
 			<div className='flex flex-col w-full md:w-72 pl-4'>
-				<p className='text-black leading-loose mb-2'>Project: {projectName}</p>
 				<h2 className='text-2xl text-black font-bold mb-2'>{projectTitle}</h2>
 				<section className='text-black'>{text}</section>
 				<p className='mt-4 text-black'>Technologies used: {techUsed}</p>
