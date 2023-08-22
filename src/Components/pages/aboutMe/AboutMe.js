@@ -1,24 +1,26 @@
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useEffect, Suspense } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { basicText } from './aboutMeText';
 import { fullText } from './aboutMeText';
 import mephoto from '../../../images/me.png';
 import imgLoading from '../../../images/imgLoading.jpg';
 import Portfolio from './AboutMePortfolio';
 import WorkExpirience from './AboutMeWorkExpirience';
+import { aboutMeActions } from '../../../store/aboutMe-slice';
 
 const LazyImage = React.lazy(() => import('../../service/LoadingImage'));
 
 const AboutMe = () => {
-	const [loading, setLoading] = useState(true);
-	const [mainImageLoaded, setMainImageLoaded] = useState(false);
+	const dispatch= useDispatch()
+	const loading= useSelector((state)=> state.aboutState.loading);
+	const mainImageLoaded=useSelector((state)=>state.aboutState.mainImageLoaded);
 
 	useEffect(() => {
 		const image = new Image();
 		image.src = mephoto;
 
 		image.onload = () => {
-			setLoading(false);
-			setMainImageLoaded(true);
+			dispatch(aboutMeActions.aboutMeHander())
 		};
 
 		return () => {

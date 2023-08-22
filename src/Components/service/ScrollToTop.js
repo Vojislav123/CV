@@ -1,12 +1,16 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { scrollActions } from '../../store/scroll-slice';
+
 
 import styles from './css/ScrollToTop.module.css';
 import scrollIcon from '../../images/scrollUp.svg';
 
 const ScrollToTop = () => {
+  const dispach= useDispatch();
+  const scrollState= useSelector((state)=>state.scroll.showButton);
   const { pathname } = useLocation();
-  const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -23,9 +27,9 @@ const ScrollToTop = () => {
     const headerHeight = 80;
 
     if (scrollY > headerHeight) {
-      setShowButton(true);
+      dispach(scrollActions.showButtonHandler())
     } else {
-      setShowButton(false);
+      dispach(scrollActions.hideButtonHandler())
     }
   };
 
@@ -38,7 +42,7 @@ const ScrollToTop = () => {
 
   return (
     <>
-      {showButton && (
+      {scrollState && (
         <button className={styles.topButton} onClick={scrollToTop}>
           <img src={scrollIcon} alt='back to top' />
         </button>

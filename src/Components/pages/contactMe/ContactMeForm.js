@@ -1,16 +1,16 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import emailjs from '@emailjs/browser';
 import { toast } from 'react-hot-toast';
+import { contactFormActions } from '../../../store/contactForm-slice';
 
 const ContactForm = () => {
   const form = useRef(null);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-  const [errors, setErrors] = useState({});
-  const [formSubmitted, setFormSubmitted] = useState(false);
+  const dispatch= useDispatch();
+  const errors= useSelector((state)=> state.formState.errors);
+  const formSubmitted= useSelector((state)=> state.formState.formSubmitted);
+  const formData= useSelector((state)=> state.formState.formData)
+
   const toastInfo=[];
 
   const serviceEmail = process.env.REACT_APP_SERVICE_ID;
@@ -19,10 +19,7 @@ const ContactForm = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: value,
-    }));
+    dispatch(contactFormActions.setFormData({ ...formData, [name]: value }));
   };
 
 
@@ -48,17 +45,13 @@ const ContactForm = () => {
       toastInfo.push('Message is required')
     }
 
-    setErrors(validationErrors);
+    dispatch(contactFormActions.setErrors(validationErrors));
     return Object.keys(validationErrors).length === 0;
   };
 
   const resetForm = () => {
-    setFormData({
-      name: '',
-      email: '',
-      message: '',
-    });
-    setFormSubmitted(true);
+    dispatch(contactFormActions.clearFormData());
+    dispatch(contactFormActions.formSubmissionHandler());
   };
 
   const formSubmissionHandler = (event) => {
@@ -81,7 +74,7 @@ const ContactForm = () => {
         resetForm();
       },
       (error) => {
-        console.log(error.text);
+        toast.error(error.text);
       }
     );
   

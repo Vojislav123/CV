@@ -1,12 +1,6 @@
 import React from 'react';
 import ContactForm from './ContactMeForm';
-
-let textBeforeForm = (
-  <p>
-    I am interested in learning and full-time job opportunities - especially on ambitious or large projects.
-    However, if you have any other requests or questions, don't hesitate to contact me using the form below.
-  </p>
-);
+import { textBeforeForm } from './textBeforeForm';
 
 const ContactMe = () => {
   return (

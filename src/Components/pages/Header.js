@@ -1,29 +1,27 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../../images/logo.png";
-import logoOnHover from "../../images/logoOnHover.png";
+import { useDispatch, useSelector } from "react-redux";
+import { headerActions } from "../../store/header-slice";
 import styles from "./css/Header.module.css";
 
 const Header = () => {
-  const [useLogo, setUseLogo] = useState(logo);
-  const [isTransitionActive, setIsTransitionActive] = useState(false);
+  const dispach = useDispatch();
+  const displayLogo= useSelector((state)=> state.headerState.useLogo)
+  const isTransitionActive=useSelector((state)=>state.headerState.isTransitionActive)
+
 
   const refreshPage = () => {
     window.location.href = "/";
   };
 
   const animateLogo = () => {
-    setUseLogo(logoOnHover);
-    setIsTransitionActive(true);
+    dispach(headerActions.otherLogo());
+    dispach(headerActions.transitionHandler());
   };
 
   const resetLogo = () => {
-    setUseLogo(logo);
-    setIsTransitionActive(false);
+    dispach(headerActions.mainLogo());
+    dispach(headerActions.transitionHandler());
   };
-
-
-
 
 
   return (
@@ -32,7 +30,7 @@ const Header = () => {
         <img
           className={isTransitionActive ? styles.logoAnimated : styles.logo}
           onClick={refreshPage}
-          src={useLogo}
+          src={displayLogo}
           onMouseOver={animateLogo}
           onMouseOut={resetLogo}
           alt="logo"

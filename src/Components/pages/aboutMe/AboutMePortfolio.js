@@ -7,7 +7,8 @@ import projectImage4 from '../../../images/Chucky.png';
 import projectImage5 from '../../../images/pokeApp.png';
 import nasaImage from '../../../images/nasaProject.png';
 import zastavaCars from '../../../images/zastavaAutomobili.png';
-import cdtHub from '../../../images/cdtHub.png'
+import cdtHub from '../../../images/cdtHub.png';
+
 
 const Portfolio = () => {
 	return (
@@ -19,15 +20,13 @@ const Portfolio = () => {
 				<h2 className='text-3xl font-bold mb-8'>Take a look at my portfolio</h2>
 			</div>
 			<div className='flex flex-col items-center space-y-8'>
-      <ProjectModal
+				<ProjectModal
 					projectName={'CDT Hub'}
 					projectTitle={'CDT Hub'}
-					text={
-						"Webpage created during internship with Trust Digital"
-					}
+					text={'Webpage created during internship with Trust Digital'}
 					techUsed={'Next.JS, Typescript, Tailwind CSS'}
 					img={cdtHub}
-          bgColor={'blue2'}
+					bgColor={'blue2'}
 				/>
 
 				<ProjectModal
@@ -41,7 +40,7 @@ const Portfolio = () => {
 					online={'https://nasa-apis-zeta.vercel.app/'}
 					buttonText={'View Online'}
 					img={nasaImage}
-          bgColor={'pink'}
+					bgColor={'pink'}
 				/>
 				<ProjectModal
 					projectName={'Zastava Cars'}
@@ -52,7 +51,7 @@ const Portfolio = () => {
 					online={'https://zastava-showcase.vercel.app/'}
 					buttonText={'View Online'}
 					img={zastavaCars}
-          bgColor={'blue'}
+					bgColor={'blue'}
 				/>
 				<ProjectModal
 					projectName={'Pokemon database'}
@@ -64,7 +63,7 @@ const Portfolio = () => {
 					gitLink={'https://github.com/Vojislav123/pokemonAPI-project'}
 					buttonText={'View Online'}
 					img={projectImage5}
-          bgColor={'grey'}
+					bgColor={'grey'}
 				/>
 
 				<ProjectModal
@@ -76,7 +75,7 @@ const Portfolio = () => {
 					techUsed={'React, CSS'}
 					gitLink={'https://github.com/Vojislav123/Projects/tree/main/bitFinal'}
 					img={projectImage}
-          bgColor={'blue2'}
+					bgColor={'blue2'}
 				/>
 
 				<ProjectModal
@@ -97,7 +96,7 @@ const Portfolio = () => {
 						'https://github.com/Vojislav123/Projects/tree/main/Movie%20thingy'
 					}
 					img={projectImage3}
-          bgColor={'pink'}
+					bgColor={'pink'}
 				/>
 
 				<ProjectModal
@@ -109,7 +108,7 @@ const Portfolio = () => {
 						'https://github.com/Vojislav123/Projects/tree/main/chuckNorris'
 					}
 					img={projectImage4}
-          bgColor={'blue'}
+					bgColor={'blue'}
 				/>
 			</div>
 		</div>
